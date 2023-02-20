@@ -14,6 +14,18 @@ export const getClients = result => {
     });
 }
 
+// insert Product to Database
+export const insertClient = (data, result) => {
+    db.query('INSERT INTO Clients SET ?', [data], (err, results) => {
+        if (err) {
+            console.log(err);
+            result(err, null);
+            return;
+        }
+        result(null, results);
+    });
+}
+
 // // get single product
 // export const getProductById = (id, result) => {
 //     db.query('SELECT * FROM product WHERE product_id = ?', [id], (err, results) => {
@@ -26,17 +38,6 @@ export const getClients = result => {
 //     });
 // }
 
-// // insert Product to Database
-// export const insertProduct = (data, result) => {
-//     db.query('INSERT INTO product SET ?', [data], (err, results) => {
-//         if (err) {
-//             console.log(err);
-//             result(err, null);
-//             return;
-//         }
-//         result(null, results);
-//     });
-// }
 
 // // Update Product to Database
 // export const updateProductById = (data, id, result) => {
