@@ -1,0 +1,9 @@
+A middleware has 3 arguments
+err, req, res, next
+
+different types of middleware
+
+app -- > app.use(errorHandling)
+route -- > route.get('/', message, (req, res) => {
+    
+})

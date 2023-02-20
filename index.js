@@ -3,7 +3,7 @@ import express from "express";
 // import cors
 import cors from "cors";
 import bodyParser from "body-parser"; 
- 
+import { errorHandling } from "./app/middleware/errorHandling.js";
 // import routes
 import Router from "./app/routes/routes.js";
   
@@ -23,3 +23,5 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(Router);
   
 app.listen(5000, () => console.log('Server running'));
+
+app.use(errorHandling);
